@@ -1,4 +1,5 @@
 extracted_features/
+embedding_checkpoints/
 __pycache__/
 *.csv
 *.pt
