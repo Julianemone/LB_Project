@@ -1,5 +1,6 @@
 extracted_features/
 embedding_checkpoints/
+models/test
 __pycache__/
 *.csv
 *.pt

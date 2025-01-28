@@ -7,7 +7,7 @@ FILENAME_TITLE_EMB = "title_emb.pt"
 FILENAME_FIRST_PARAGRAPH_EMB = "first_paragraph_emb.pt"
 FILENAME_NUM_WORDS = "num_words.pt"
 FILENAME_NUM_PARAGRAPH = "num_paragraph.pt"
-FILENAME_AUTHOR_ID = "author_id.pt"
+FILENAME_AUTHOR_OHE = "author_ohe.pt"
 FILENAME_LABELS_OHE = "labels_ohe.pt"
 FILENAME_MAIN_SECTION_OHE = "main_section_ohe.pt"
 FILENAME_MAIN_SECTION_EMB = "main_section_emb.pt"
@@ -23,3 +23,6 @@ FILENAME_TIME_INDICATIONS_MENTIONED_EMB = "time_indications_mentioned_emb.pt"
 FILENAME_RELEVANCE_WINDOW = "relevance_window_in_hours.pt"
 
 ALL_BRANDS = ["ad", "brabantsdagblad", "destentor", "nu", "parool", "trouw", "volkskrant"]
+
+
+SEED = 42

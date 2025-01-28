@@ -3,7 +3,7 @@ import torch.nn as nn
 
 
 class SimpleMLP(nn.Module):
-    def __init__(self, input_size, hidden_sizes, output_size, activation_fn=nn.ReLU(), batchnorm=False):
+    def __init__(self, input_size, hidden_sizes, output_size=1, activation_fn=nn.ReLU(), batchnorm=True):
         super(SimpleMLP, self).__init__()
         self.layers = nn.Sequential()
         for hidden_size in hidden_sizes:
