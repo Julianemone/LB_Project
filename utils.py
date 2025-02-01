@@ -25,4 +25,8 @@ FILENAME_RELEVANCE_WINDOW = "relevance_window_in_hours.pt"
 ALL_BRANDS = ["ad", "brabantsdagblad", "destentor", "nu", "parool", "trouw", "volkskrant"]
 
 
+DIRPATH_EXTRACTED_FEATURES = "extracted_features"
+DIRPATH_DATA = "Data"
+DIRPATH_INDICES = "data_split_indices"
+
 SEED = 42
