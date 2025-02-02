@@ -2,6 +2,12 @@ extracted_features/
 embedding_checkpoints/
 models/test
 models/test2
+models/test2_with_features_config
+models/12uur
+models/all_night
+models/test4
+models/test3
+models/test50trials
 __pycache__/
 *.csv
 *.pt
