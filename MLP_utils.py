@@ -6,7 +6,7 @@ import random
 
 
 class SimpleMLP(nn.Module):
-    def __init__(self, input_size, hidden_sizes, output_size=1, activation_fn=nn.ReLU(), batchnorm=True):
+    def __init__(self, input_size, hidden_sizes, output_size=1, activation_fn=nn.ReLU(), batchnorm=True, dropout=0.):
         super(SimpleMLP, self).__init__()
         self.layers = nn.Sequential()
         for hidden_size in hidden_sizes:
@@ -14,6 +14,8 @@ class SimpleMLP(nn.Module):
             if batchnorm:
                 self.layers.append(nn.BatchNorm1d(hidden_size))
             self.layers.append(activation_fn)
+            if dropout:
+                self.layers.append(nn.Dropout(p=dropout))
             input_size = hidden_size
         self.layers.append(nn.Linear(input_size, output_size))
     
@@ -53,7 +55,7 @@ def load_model(model_name, device):
         config = pickle.load(fp)
 
     hidden_sizes = config["depth"] * [config["width"]]
-    model = SimpleMLP(input_size=config["input_size"], hidden_sizes=hidden_sizes, output_size=1, batchnorm=True).to(device)
+    model = SimpleMLP(input_size=config["input_size"], hidden_sizes=hidden_sizes, output_size=1, batchnorm=config["batchnorm"], dropout=config["dropout"]).to(device)
     model.load_state_dict(torch.load(os.path.join(dir_path, 'state_dict.pth'), weights_only=True, map_location=device))
     model.eval()
     return model, config
